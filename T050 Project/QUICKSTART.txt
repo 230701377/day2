@@ -1,0 +1,70 @@
+CONTRACT LIFECYCLE & APPROVAL MANAGEMENT SYSTEM - QUICK START
+==============================================================
+
+This file mirrors the README but is condensed for fast reference.
+
+PREREQUISITES
+-------------
+- Docker Desktop (for the recommended one-command setup)
+  OR
+- Python 3.11+, Node 20+, PostgreSQL 16 with pgvector, Redis 7
+
+ONE-COMMAND SETUP (Docker)
+--------------------------
+$ cp .env.example backend/.env
+$ docker compose up --build
+- Frontend: http://localhost:3000
+- API:      http://localhost:8000/api/v1/docs
+- MinIO:    http://localhost:9001 (minio/minio123) - if enabled
+
+LOCAL SETUP (no Docker)
+-----------------------
+1. Backend
+   $ cd backend
+   $ python -m venv .venv && source .venv/bin/activate
+   $ pip install -r requirements.txt
+   $ cp .env.example .env
+   $ createdb contracts
+   $ psql contracts -c "CREATE EXTENSION vector;"
+   $ alembic upgrade head
+   $ python scripts/seed.py
+   $ uvicorn app.main:app --reload --port 8000
+
+2. Frontend
+   $ cd frontend
+   $ cp .env.example .env.local
+   $ npm install
+   $ npm run dev
+
+DEMO ACCOUNTS (password: Demo1234!)
+-----------------------------------
+admin@acme.io       Administrator
+exec@acme.io        Executive
+legal@acme.io       Legal
+finance@acme.io     Finance
+compliance@acme.io  Compliance
+manager@acme.io     Manager
+requester@acme.io   Requester
+
+RECOMMENDED DEMO FLOW
+---------------------
+1. Login as requester@acme.io
+2. Open "Vendor Agreement - Quantum Logistics (HIGH RISK)" (status: in_review)
+3. Click "AI analyze" - see clause extraction, classification, hybrid risk score
+4. Go to "Q&A" tab - ask "What is the liability cap?"
+5. Click "Submit for review" (already submitted for the risky contract)
+6. Login as legal@acme.io - go to Approvals - approve the Legal step
+7. Login as manager@acme.io - approve Manager step
+8. Login as finance@acme.io - approve Finance step
+9. Login as compliance@acme.io - approve Compliance step
+10. Login as exec@acme.io - approve Executive step
+11. Login as admin@acme.io - activate the contract
+12. Browse other tabs: Versions (compare v1 to v2), Audit (hash chain intact),
+    Analytics (risk distribution, bottlenecks, timeline), Obligations
+13. Visit Renewals - notice deadlines and auto-renew flags
+
+TROUBLESHOOTING
+---------------
+- Port 5432 in use?  edit docker-compose.yml postgres.ports
+- LLM features disabled?  set LLM_PROVIDER=openai and LLM_API_KEY in .env
+- Reset state?  docker compose down -v && docker compose up --build

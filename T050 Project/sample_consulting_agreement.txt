@@ -1,0 +1,26 @@
+CONSULTING SERVICES AGREEMENT
+
+This Consulting Services Agreement ("Agreement") is entered into by and between Enterprise Partners Inc. ("Client") and the Service Provider ("Consultant").
+
+1. SCOPE OF SERVICES
+Consultant shall provide enterprise software consulting, architectural design, and implementation advisory services as described in Statement of Work #1.
+
+2. COMPENSATION & PAYMENT TERMS
+Client agrees to pay Consultant a total contract value of ,000 USD. Invoices shall be payable Net 30 days from the date of invoice. Late payments shall accrue interest at 1.5% per month.
+
+3. TERM AND TERMINATION
+This Agreement shall commence on January 1, 2026 and continue for a period of twelve (12) months. Either party may terminate this Agreement without cause upon thirty (30) days prior written notice.
+
+4. CONFIDENTIALITY
+Each party agrees to maintain in strict confidence all proprietary or non-public information received from the other party and shall not disclose such information to third parties without prior written consent.
+
+5. INTELLECTUAL PROPERTY
+All deliverables, work product, and technical documentation developed under this Agreement shall be the sole and exclusive property of Client upon full payment of fees.
+
+6. LIMITATION OF LIABILITY
+Neither party shall be liable for indirect, incidental, special, or consequential damages. Total aggregate liability under this Agreement shall not exceed the total fees paid by Client in the preceding six (6) months.
+
+7. GOVERNING LAW & JURISDICTION
+This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of law principles.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.
